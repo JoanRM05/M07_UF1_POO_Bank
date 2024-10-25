@@ -20,7 +20,9 @@ class SilverOverdraftTest extends TestCase
 
         //Silver grant 100.00 overdraft funds.
         $overdraft = new SilverOverdraft();
+
         $this->assertEquals($expected,$overdraft->isGrantOverdraftFunds($newAmount));
+        
     }
 
     /**

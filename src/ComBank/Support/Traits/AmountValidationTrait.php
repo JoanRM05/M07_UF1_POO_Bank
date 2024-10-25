@@ -10,15 +10,19 @@
 use ComBank\Exceptions\InvalidArgsException;
 use ComBank\Exceptions\ZeroAmountException;
 
+use function PHPUnit\Framework\throwException;
+
 trait AmountValidationTrait
 {
     /**
-     * @param float $amount
+     * @param    $amount
      * @throws InvalidArgsException
      * @throws ZeroAmountException
      */
     public function validateAmount(float $amount):void
     {
-        
+        if($amount <= 0){
+            throw new ZeroAmountException("Invalid ammount value.");
+        }
     }
 }
